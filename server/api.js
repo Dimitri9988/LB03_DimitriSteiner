@@ -40,9 +40,7 @@ const postTweet = async (req, res) => {
     const { username, text } = req.body;
     const timestamp = new Date().toISOString();
 
-    if (username !== req.user.username) {
-      return res.status(403).json({ error: "Nur Posts im Namen der eigenen Identität sind erlaubt." });
-    }
+    
 
     const encryptedText = aes.encrypt(text);
 

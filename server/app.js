@@ -5,6 +5,7 @@ const { initializeAPI } = require("./api");
 
 // Create the express server
 const app = express();
+
 const limiter = rateLimit({
   windowMs: 30 * 1000,
   limit: 60,
